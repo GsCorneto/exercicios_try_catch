@@ -1,3 +1,11 @@
+class Alerta extends Error{
+  constructor(message){
+    super(message);
+    this.name = "Dados incompletos."
+  }
+}
+
+
 class NerdIF {
   constructor(estudante, cosplay, nota_cosplay) {
     this.estudante = estudante;
@@ -10,18 +18,19 @@ class NerdIF {
   }
 
   atributos() {
-    return {
-      estudante: this.estudante,
-      cosplay: this.cosplay,
-      nota_cosplay: this.nota_cosplay
-    };
+    if (this.estudante != "" && this.cosplay != "" && this.nota_cosplay != ""){
+      return this.estudante + this.cosplay + this.nota_cosplay;
+  }else{
+      throw new Alerta("Caro avaliador, complete os dados de sua avaliação.")
   }
-}
+  }
+  }
 
-const aluno = new NerdIF("João", "Homem-Aranha", 9.5);
+
+const aluno = new NerdIF("", "", "");
 const atributos = aluno.retornarAtributos();
-
+/*
 console.log(atributos.estudante); 
 console.log(atributos.cosplay);   
 console.log(atributos.nota_cosplay);
-
+*/

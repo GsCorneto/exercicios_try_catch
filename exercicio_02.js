@@ -29,7 +29,7 @@ class Estudante {
     if (this.nome != "" && this.idade != "" && this.turma != ""){
       return this.nome + this.idade + this.turma;
   }else{
-      throw new Aviso("")
+      throw new Aviso("Informações incompletas, complete o necessário.")
   }
   }
 }

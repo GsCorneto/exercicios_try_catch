@@ -9,7 +9,7 @@ class Aviso extends Error{
   }
 }
 
-class Animal {
+class Animais {
   constructor(nome, idade, especie) {
     this.nome = nome;
     this.idade = idade;
@@ -34,7 +34,7 @@ class Animal {
   }
 }
 
-const meuAnimal = new Animal("", "", "");
+const meuAnimal = new Animais("", "", "");
 const atributos = meuAnimal.mostrarAtributos();
 console.log(atributos)
 
